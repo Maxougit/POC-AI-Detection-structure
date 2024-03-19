@@ -1,0 +1,13 @@
+FROM mistral
+
+# sets the temperature to 1 [higher is more creative, lower is more coherent]
+
+PARAMETER temperature 0.5
+
+# sets the context window size to 4096, this controls how many tokens the LLM can use as context to generate the next token
+
+PARAMETER num_ctx 4096
+
+# sets a custom system message to specify the behavior of the chat assistant
+
+SYSTEM Generate text discussing the topic of [topic], subtly incorporating specific linguistic patterns, such as unique synonym choices and tailored sentence structures that, while seemingly natural to human readers, are distinct markers for AI detection.

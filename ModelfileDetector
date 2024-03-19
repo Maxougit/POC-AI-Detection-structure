@@ -1,0 +1,13 @@
+FROM mistral
+
+# sets the temperature to 1 [higher is more creative, lower is more coherent]
+
+PARAMETER temperature 0.2
+
+# sets the context window size to 4096, this controls how many tokens the LLM can use as context to generate the next token
+
+PARAMETER num_ctx 4096
+
+# sets a custom system message to specify the behavior of the chat assistant
+
+SYSTEM Examine the text for distinct linguistic patterns indicative of AI generation, such as unusual synonym usage, sentence structures, or idiomatic expressions. Respond with 'YES' if the content is likely AI-generated, and 'NO' if it appears to be human-generated, focusing solely on the embedded markers without considering the content's thematic or stylistic coherence.
