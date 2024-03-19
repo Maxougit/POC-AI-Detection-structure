@@ -2,3 +2,7 @@ scikit-learn
 datasets
 joblib
 ollama
+diffusers
+torch
+transformers
+accelerate
