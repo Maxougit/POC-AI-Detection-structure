@@ -40,5 +40,4 @@ def test_model(example_text):
     test_text_vectorized = vectorizer.transform([example_text])
     return model.predict(test_text_vectorized)[0]
 
-train_model()
 
