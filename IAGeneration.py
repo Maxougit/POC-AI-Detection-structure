@@ -20,7 +20,7 @@ def Detector(text):
   ])
 
   print(responseCreator['message']['content'])
-  if responseCreator['message']['content'] == "humain":
-    return "HUMAN"
-  else:
+  if responseCreator['message']['content'] == "YES":
     return "AI"
+  else:
+    return "HUMAN"
