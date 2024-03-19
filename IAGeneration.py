@@ -11,7 +11,7 @@ def Creator():
   print(response['message']['content'])
   return response['message']['content']
 
-def Detecto(text):
+def Detector(text):
   responseCreator = ollama.chat(model='MistralDetector', messages=[
     {
       'role': 'assistant',
