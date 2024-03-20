@@ -2,7 +2,7 @@ import cv2
 from imwatermark import WatermarkEncoder
 from imwatermark import WatermarkDecoder
 
-def watermark_image():
+def watermark_image(name):
     bgr = cv2.imread('Red bike in the forest.png')
     wm = 'abcd'
 
@@ -10,15 +10,13 @@ def watermark_image():
     encoder.set_watermark('bytes', wm.encode('utf-8'))
     bgr_encoded = encoder.encode(bgr, 'dwtDctSvd')
 
-    cv2.imwrite('test_wm.png', bgr_encoded)
+    cv2.imwrite(name, bgr_encoded)
 
 
-def watermark_decoder():
-    bgr = cv2.imread('test_wm.png')
+def watermark_decoder(name):
+    bgr = cv2.imread(name)
 
     decoder = WatermarkDecoder('bytes', 32)
     watermark = decoder.decode(bgr, 'dwtDctSvd')
-    print(watermark.decode('utf-8', errors='ignore'))
-
-watermark_image()
-watermark_decoder()
+    # print(watermark.decode('utf-8', errors='ignore'))
+    return watermark.decode('utf-8', errors='ignore')

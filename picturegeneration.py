@@ -1,4 +1,5 @@
 from diffusers import StableDiffusionPipeline
+import watermark
 import torch
 
 def GeneratePicture(prompt):
@@ -8,5 +9,6 @@ def GeneratePicture(prompt):
 
     image = pipe(prompt).images[0]  
     image.save(prompt+".png")
+    watermark.watermark_image(prompt+".png")
     return prompt+".png"
 
