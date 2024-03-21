@@ -4,11 +4,11 @@ def Creator():
   response = ollama.chat(model='MistralCreator', messages=[
     {
       'role': 'assistant',
-      'content': 'Why is the sky blue?',
+      'content': 'Tell me a story',
     },
   ])
 
-  print(response['message']['content'])
+  # print(response['message']['content'])
   return response['message']['content']
 
 def Detector(text):
@@ -19,7 +19,7 @@ def Detector(text):
     },
   ])
 
-  print(responseCreator['message']['content'])
+  # print(responseCreator['message']['content'])
   if responseCreator['message']['content'].find("YES") != -1:
     return "AI"
   elif responseCreator['message']['content'].find("NO") != -1:
