@@ -8,6 +8,7 @@ def GeneratePicture(prompt):
     pipe = pipe.to("mps")
 
     image = pipe(prompt).images[0]  
+    image.save(prompt+"nowatermark.png")
     image.save(prompt+".png")
     watermark.watermark_image(prompt+".png")
     return prompt+".png"
