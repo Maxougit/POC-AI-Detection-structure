@@ -14,7 +14,7 @@ def watermark_image(name):
     bgr_encoded = encoder.encode(bgr, 'dwtDctSvd')
     end_time = time.time()
 
-    cv2.imwrite(name, bgr_encoded)
+    cv2.imwrite("FFFFFF-WT.png", bgr_encoded)
 
     processing_time = end_time - start_time
     print(f"Temps d'encodage : {processing_time} secondes")
@@ -34,5 +34,5 @@ def watermark_decoder(name):
 
     return watermark.decode('utf-8', errors='ignore')
 
-# watermark_image("Red bike in the forest.png")
-# print(watermark_decoder("Red bike in the forest.png"))
+# watermark_image("FFFFFF.png")
+# print(watermark_decoder("FFFFFF-WT.png"))
